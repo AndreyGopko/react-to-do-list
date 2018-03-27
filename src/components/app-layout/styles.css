@@ -1,0 +1,13 @@
+.header {
+    background: #eee;
+    padding: 20px;
+}
+
+.title {
+    margin: 0;
+    text-align: center;
+}
+
+.container {
+    padding: 20px;
+}
