@@ -1,6 +1,7 @@
 .header {
     background: #eee;
     padding: 20px;
+    box-shadow: 0 2px 8px 0px rgb(215, 215, 215);
 }
 
 .title {
