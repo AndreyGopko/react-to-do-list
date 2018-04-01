@@ -1,19 +1,18 @@
 import React, { Component } from 'react';
+import Header from '../header';
+import TodoApp from '../todo-app';
+
 import './styles.css';
 
-class AppLayout extends Component {
+export default class AppLayout extends Component {
   render() {
     return (
-      <div className="main">
-        <header className="header">
-          <h1 className="title">Welcome to React</h1>
-        </header>
-        <div className="container">
-          Hello in React.JS
+      <div className='main'>
+        <Header />
+        <div className='container'>
+          <TodoApp />
         </div>
       </div>
     );
   }
 }
-
-export default AppLayout;
