@@ -1,3 +1,13 @@
+.item-container {
+    user-select: none;
+}
+
 .done {
+    text-decoration: line-through;
     color: red;
+}
+
+.icon {
+    margin-right: 8px;
+    cursor: pointer;
 }
