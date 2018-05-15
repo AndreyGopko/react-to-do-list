@@ -1,14 +1,32 @@
-.header {
-    background: #eee;
-    padding: 20px;
-    box-shadow: 0 2px 8px 0px rgb(215, 215, 215);
+
+.list-element{
+    list-style: none;
+    border: 1px solid grey;
+    padding: 10px;
+}
+.icon{
+    margin: 0 20px;
+}
+.card{
+    padding: 0;
+    margin-top: 50px;
+}
+.new-task{
+    width: 100%;
+    padding: 5px 10px;
+}
+.list-group-item.checked::before{
+    content: '';
+    height: 1px;
+    left: 0;
+    width: 100%;
+    position: absolute;
+    background-color: red;
+    top: 48%;
+    box-shadow: 1px 1px 8px red;
+
 }
 
-.title {
-    margin: 0;
+.card-header{
     text-align: center;
-}
-
-.container {
-    padding: 20px;
 }

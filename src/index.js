@@ -1,10 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import 'bootstrap/dist/css/bootstrap.css'
 import './index.css';
-import AppLayout from './components/app-layout';
+import ToDoCard from './components/app-layout';
 
 ReactDOM.render(
-    <AppLayout />,
+    <ToDoCard />,
     document.getElementById('root')
 );
