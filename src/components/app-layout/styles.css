@@ -12,3 +12,7 @@
 .container {
     padding: 20px;
 }
+
+.checked {
+    opacity: 0.5;
+}
