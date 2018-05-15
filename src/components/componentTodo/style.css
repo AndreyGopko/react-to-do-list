@@ -1,0 +1,40 @@
+.btn-red {
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 30px;
+    background-color: #f44336;
+    border: none;
+    color: white;
+
+}
+.btn-grey {
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 30px;
+    background-color: #e7e7e7;
+    border: none;
+    color: black;
+
+}
+.edit-text {
+    font-size: 35px;
+}
+.edit-form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.todo-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.text-Todo {
+    font-size: 35px;
+    width: 20%;
+}
+input:checked + .text-Todo {
+    text-decoration:line-through;
+}

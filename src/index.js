@@ -1,10 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import 'bootstrap/dist/css/bootstrap.css'
 import './index.css';
-import AppLayout from './components/app-layout';
+import Field from './components/comtonentField/Field';
 
 ReactDOM.render(
-    <AppLayout />,
+    <Field />,
     document.getElementById('root')
 );

@@ -1,0 +1,24 @@
+.container {
+    padding: 0 100px 0 100px;
+    margin: 0 auto;
+}
+.wrapper {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+.input {
+    border: 1px solid red;
+    border-radius: 4px;
+    padding: 10px;
+    font-size: 35px;
+}
+.button {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 30px;;
+}
