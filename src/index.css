@@ -1,5 +1,67 @@
-body {
-  margin: 0;
+body * {
+  box-sizing: border-box;
+  border-top: 1px solid transparent;
+  margin: o;
   padding: 0;
   font-family: sans-serif;
+}
+.hide {
+  display: none;
+}
+.show {
+  display: auto;
+}
+.main {
+  width: 700px;
+  margin: 0 auto;
+  background-color: #f2f2f2;
+}
+.global-title {
+  color: #000000;
+  text-align: center;
+}
+.list {
+  min-height: 300px;
+}
+.list-item {
+  width: 100%;
+  min-height: 50px;
+  padding-left: 20px; 
+  display: flex;
+  align-items: center;
+  list-style: none;
+  background-color: #e6e6e6;
+  border-bottom: 1px solid #666;
+  color: #262626;
+}
+.list-check {
+  margin-right: 30px;
+}
+.input-inner {
+  width: 200px;
+  margin: 0 auto;
+  text-align: center;
+}
+.list-item-text {
+  width: 65%;
+  background-color: transparent;
+  border: none;
+}
+.enterData {
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 5px 10px;
+  height: 30px;
+  border: none;
+  border-radius: 5px;
+  background-color: #d9d9d9;
+}
+.btn {
+  padding: 10px 13px;
+  color: #000;
+  border: 2px solid #737373;
+  border-radius: 5px;
+}
+.editElemList {
+  margin-right: 15px;
 }
