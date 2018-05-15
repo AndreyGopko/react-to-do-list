@@ -12,3 +12,122 @@
 .container {
     padding: 20px;
 }
+
+body * {
+    box-sizing: border-box;
+}
+
+.card-place {
+    width: 350px;
+    min-height: 500px;
+    border: #bdbdbd 1px solid;
+    border-radius: 5px;
+    margin: 10px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    background-color: #ececec;
+}
+
+.card-title {
+    display: inline-block;
+    font-size: 20px;
+    text-align: center;
+    border-radius: 5px;
+    border: #bdbdbd 1px solid;
+    padding: 5px;
+    background-color: #fff;
+}
+
+.card-footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    min-height: 60px;
+    width: 100%;
+}
+
+.card-input-place {
+    display: flex;
+    justify-content: space-between;
+}
+
+.card-progress-bar {
+    height: 15px;
+    width: 0%;
+    background-color: #228B22;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 12px;
+}
+
+.card-input {
+    width: 90%;
+    border-radius: 5px;
+}
+
+.btn {
+    width: 24px;
+    height: 24px;
+    text-align: center;
+}
+
+.btn-add {
+    background: url(https://cdn2.iconfinder.com/data/icons/budicon-interface-layout-2/16/21-interface_-_plus_add-20.png) no-repeat;
+    padding: 2px;
+    cursor: pointer;
+}
+
+.btn-edit {
+    background: url(https://cdn3.iconfinder.com/data/icons/edition/100/pen_paper_2-16.png) no-repeat center;
+    padding: 2px;
+    cursor: pointer;
+    text-align: right;
+}
+
+.btn-rm {
+    background: url(https://cdn3.iconfinder.com/data/icons/edition/100/trashcan-16.png) no-repeat center;
+    padding: 2px;
+    cursor: pointer;
+    display: inline-block;
+    text-align: right;
+}
+
+.list-items {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    min-height: 350px;
+}
+
+.list-value {
+    list-style: none;
+    margin: 0 0 5px 0;
+    padding: 2px;
+    font-size: 18px;
+    border: #bdbdbd 1px solid;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.checkbox {
+    margin: 5px;
+}
+
+.purchase-btns {
+    display: flex;
+    align-items: center;
+}
+
+.hidden {
+    display: none;
+}
+
+
