@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './styles.css';
+import TodoBox from '../todo-box';
 
 class AppLayout extends Component {
   render() {
@@ -9,7 +10,7 @@ class AppLayout extends Component {
           <h1 className='title'>Welcome to React</h1>
         </header>
         <div className='container'>
-          Hello in React.JS
+          <TodoBox />
         </div>
       </div>
     );

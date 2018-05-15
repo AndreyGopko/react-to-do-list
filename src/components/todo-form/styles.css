@@ -1,0 +1,40 @@
+.form-wrapper {
+	width: 90%;
+	margin: 0 auto;
+	padding: 20px 40px;
+
+}
+
+.form {
+	display: flex;
+	justify-content: center;
+}
+
+.form-todo-text {
+	width: 100%;
+	border-radius: 3px;
+	outline: none;
+	color: #757575;
+	font-size: 16px;
+	border: none;
+	border-bottom: 1px solid #3CB371;
+}
+
+.form-add-btn {
+	padding: 10px 35px;
+	text-transform: uppercase;
+	background-color: #3CB371;
+	color: #fff;
+	border: none;
+	margin-left: -5px;
+}
+
+.form-add-btn:hover {
+	background-color: #2E8B57;
+}
+
+.form-todo-text:focus {
+	background-color: #DCDCDC;
+	border: 1px solid #3CB371;
+	border-right: none;
+}

@@ -1,0 +1,60 @@
+.todo-list-item {
+	box-sizing: border-box;
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	border-bottom: 1px solid #3CB371;
+	padding: 10px 20px;
+}
+
+.todo-status {
+	width: 10%;
+}
+
+.todo-content {
+	width: 70%;
+	text-align: left;
+	margin: 0;
+}
+
+.todo-operate-btn {
+	display: flex;
+	justify-content: space-between;
+}
+
+.todo-btn {
+	padding: 10px 35px;
+	text-transform: uppercase;
+	background-color: #3CB371;
+	opacity: .7;
+	color: dimgrey;
+	border: none;
+
+}
+
+.todo-btn:hover {
+	opacity: 1;
+	color: #ffffff;
+}
+
+.todo-edit {
+	margin-right: 10px;
+}
+
+.new-todo-content {
+	width: 70%;
+	text-align: left;
+	margin: 0;
+	border: none;
+	outline: none;
+}
+
+.hide {
+	display: none;
+}
+
+.checked {
+	background-color: rgba(0, 0, 75, .1);
+	border-radius: 20px;
+}
