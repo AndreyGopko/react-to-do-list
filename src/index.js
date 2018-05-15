@@ -1,10 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import 'bootstrap/dist/css/bootstrap.css'
-import './index.css';
-import AppLayout from './components/app-layout';
+import TodoApp from './components/TodoApp/'
+import todos from './todos'
+import './index.css'
 
-ReactDOM.render(
-    <AppLayout />,
-    document.getElementById('root')
-);
+const root = document.getElementById('root');
+
+ReactDOM.render(<TodoApp todos = {todos}/>, root);
