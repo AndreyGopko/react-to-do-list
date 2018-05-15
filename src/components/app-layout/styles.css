@@ -1,14 +1,43 @@
-.header {
-    background: #eee;
+.wrapper {
+    width: 50%;
+    margin: 100px auto;
+    border: 3px solid #000;
+    padding: 30px;
+}
+.todo-input {
+    border: 1px solid #000;
     padding: 20px;
-    box-shadow: 0 2px 8px 0px rgb(215, 215, 215);
+    font-size: 2em;
+}
+.checked {
+    background: yellow;
+}
+.no-checked {
+    background: #ccc;
+}
+.todo-item {
+    display: grid;
+    grid-template-columns: 20px 1fr 30px 70px;
+}
+.todo-del {
+    background: olivedrab;
+    padding: 10px 20px;
+}
+.todo-del:hover {
+    background: greenyellow;
+    color: red;
+}
+.todo-del:active {
+    background: #000;
+    color: #fff;
 }
 
-.title {
-    margin: 0;
-    text-align: center;
+.todo-list {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 20px;
 }
-
-.container {
-    padding: 20px;
+.todo-id {
+    background: #7C0032;
+    color: #fff;
 }
