@@ -5,14 +5,14 @@ class Item extends Component {
 
     render() {
         return (
-            <li className='list-value' data-id={this.props.id} data-editing={this.props.editing}>
+            <li className='list-value' data-id={this.props.id}>
                 <div className='purchase-text'>
                     <input type='checkbox' className='checkbox' />
-                    <span className={this.props.hidden ? 'hidden' : ''}>{this.props.text}</span>
-                    <input type='text' className={this.props.hidden ? '' : 'hidden' } defaultValue={this.props.inputValue} />
+                    <span className={this.props.editing ? 'hidden' : ''}>{this.props.text}</span>
+                    <input type='text' className={this.props.editing ? '' : 'hidden'} defaultValue={this.props.text} ref={node => this.newInput = node}/>
                 </div>
                 <div className='purchase-btns'>
-                    <div className='btn btn-edit' onClick={(event) => this.props.editItem(this.props.id, event)} />
+                    <div className='btn btn-edit' onClick={() => this.props.editItem(this.props.id, this.newInput)} />
                     <div className='btn btn-rm' onClick={() => this.props.rmItem(this.props.id)} />
                 </div>
             </li>
@@ -23,65 +23,65 @@ class Item extends Component {
 class Card extends Component {
     constructor(){
         super();
-        this.state = {items: [], hidden: [], inputValue: []};
+        this.state = {items: []};
     }
 
     addItem = () => {
         if(this.input.value) {
             let tmpItems = this.state.items;
-            tmpItems.push(this.input.value);
-            let tmpHidden = tmpItems.map(item => false);
-            let tmpInputValue = this.state.inputValue;
-            tmpInputValue.push(this.input.value);
-            this.setState({items: tmpItems, hidden: tmpHidden, inputValue: tmpInputValue});
+            tmpItems.push({id: Math.random().toFixed(2), editing: false, value: this.input.value});
+            this.setState({items: tmpItems});
+            console.log(this.state.items);
             this.input.value = '';
         }
     };
 
     rmItem = (id) => {
         let tmpItems = this.state.items;
-        tmpItems.splice(id, 1);
-        let tmpHidden = tmpItems.map(item => false);
-        this.setState({items: tmpItems, hidden: tmpHidden});
+        for (let i = 0; i < tmpItems.length; i++) {
+            if(tmpItems[i].id == id) {
+                tmpItems.splice(i, 1);
+                break
+            }
+        }
+        this.setState({items: tmpItems});
     };
 
-    editItem = (id, event) => {
-        if(event.target.closest('.list-value').dataset.editing === 'false') {
-            let tmpInputValue = this.state.inputValue;
-            tmpInputValue[id] = event.target.closest('.list-value').querySelector('span').innerText;
-            let tmpHidden = this.state.hidden;
-            tmpHidden[id] = true;
-            this.setState({hidden: tmpHidden, inputValue: tmpInputValue});
+    editItem = (id, newInput) => {
+        let tmpItems = this.state.items;
+        let index;
+        for (let i = 0; i < tmpItems.length; i++) {
+            if (tmpItems[i].id == id){
+                index = i;
+                break
+            }
+        }
+        if(tmpItems[index].editing == false) {
+            tmpItems[index] = {id: tmpItems[index].id, editing: true, value: tmpItems[index].value};
+            this.setState({items: tmpItems});
         } else {
-            if(event.target.closest('.list-value').querySelector('input[type=text]').value) {
-                let tmpInputValue = this.state.inputValue;
-                tmpInputValue[id] = event.target.closest('.list-value').querySelector('span').innerText;
-                let tmpItems = this.state.items;
-                tmpItems[id] = event.target.closest('.list-value').querySelector('input[type=text]').value;
-                let tmpHidden = this.state.hidden;
-                tmpHidden[id] = false;
-                this.setState({items: tmpItems, hidden: tmpHidden, inputValue: tmpInputValue});
+            if(tmpItems[index].editing == true) {
+                let tmpValue = newInput;
+                tmpItems[index] = {id: tmpItems[index].id, editing: false, value: newInput.value};
+                this.setState({items: tmpItems});
             } else {
                 alert('The field cannot be empty!')
             }
-        }
+         }
     };
 
-    progress = (id, event) => {
-
-    };
+    // progress = (id, event) => {
+    //
+    // };
 
     render() {
-        let items = this.state.items.map((item, index) => <Item hidden={this.state.hidden[index]}
+        let items = this.state.items.map((item, index) => <Item editing={item.editing}
                                                                 editItem={this.editItem}
                                                                 rmItem={this.rmItem}
                                                                 state={this.state}
-                                                                editing={this.state.hidden[index]}
-                                                                progress={this.progress}
-                                                                inputValue={this.state.inputValue[index]}
                                                                 key={index}
-                                                                id={index}
-                                                                text={item} />);
+                                                                id={item.id}
+                                                                text={item.value} />);
         return (
             <div className='card-place'>
                 <div className='card-title'>
