@@ -25,6 +25,7 @@ export default class TodoContainer extends React.PureComponent{
       todos: [
         ...this.state.todos,
         { 
+          id: Date.now(),
           date: Date.now(),
           value: this.inputComponent.value,
           flag: false,
@@ -37,7 +38,7 @@ export default class TodoContainer extends React.PureComponent{
   }
   
   handelDeleteClick = (id) => {
-    const updatedTodos = this.state.todos.filter((el, index) => index != id)
+    const updatedTodos = this.state.todos.filter((el) => el.id != id)
     this.setState({ todos: updatedTodos }, () => setLocalStorage(updatedTodos))
   }
   
@@ -53,8 +54,8 @@ export default class TodoContainer extends React.PureComponent{
   }
 
   handelInput = (e, id) => {
-    const updatedTodos = this.state.todos.map((el, index) => {
-      if(index == id){
+    const updatedTodos = this.state.todos.map((el) => {
+      if(el.id == id){
         return el = Object.assign(el, {value: e.target.value})
       } else {
         return el
@@ -70,7 +71,7 @@ export default class TodoContainer extends React.PureComponent{
       <div className="title" >TO - DO LIST</div>
       <FormComponent handelSubmit={this.handelSubmit} inputRef={input => this.inputComponent = input} />
                 <div id="output">{
-                  todos.map((el, index) => <TodoComponent key={index} index={index} el={el}
+                  todos.map((el) => <TodoComponent key={el.id} el={el}
                   handelDeleteClick={this.handelDeleteClick} 
                         handelDoneClick={this.handelDoneClick}
                         handelUpdateClick={this.handelUpdateClick}

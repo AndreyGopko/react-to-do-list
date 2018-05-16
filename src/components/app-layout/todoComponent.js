@@ -5,24 +5,24 @@ import PropTypes from 'prop-types';
 import './styles.css';
 
 const TodoComponent = (props) => {
-    const { el, handelDeleteClick, handelDoneClick, handelUpdateClick, index, inputRef, readonly, handelInput } = props
+    const { el, handelDeleteClick, handelDoneClick, handelUpdateClick, inputRef, readonly, handelInput } = props
     return(
-        <div id={index} className="todoItem">
+        <div id={el.id} className="todoItem">
         <ButtonComponent 
             type={"submit"} 
-            handelClick={() => handelDeleteClick(index)}
+            handelClick={() => handelDeleteClick(el.id)}
             value={"x"} 
             classNames="btn" 
         />
         <ButtonComponent 
             type={"submit"} 
-            handelClick={() => handelDoneClick(index)}
+            handelClick={() => handelDoneClick(el.id)}
             value={"DONE"} 
             classNames={"btn"} 
         />
         <ButtonComponent 
             type={"submit"} 
-            handelClick={() => handelUpdateClick(index)}
+            handelClick={() => handelUpdateClick(el.id)}
             value={"UPDATE"} 
             classNames="btn" 
         /> 
@@ -30,7 +30,7 @@ const TodoComponent = (props) => {
             <InputComponent 
             type={"text"} 
             inputRef={inputRef} 
-            onInput={el.readonly ? (e) => handelInput(e, index) : null}
+            onInput={el.readonly ? (e) => handelInput(e, el.id) : null}
             classNames={el.flag ? "input done" : el.readonly ? "input edition" : "input"}
             value={el.readonly ? "" : el.value}
             readonly={el.readonly ? readonly : null}
@@ -48,7 +48,6 @@ TodoComponent.propTypes = {
     handelDeleteClick: PropTypes.func, 
     handelDoneClick: PropTypes.func,
     handelUpdateClick: PropTypes.func, 
-    index:  PropTypes.number, 
     inputRef: PropTypes.func,
     readonly: PropTypes.bool, 
     handelInput: PropTypes.func

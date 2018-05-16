@@ -1,5 +1,4 @@
 export function setLocalStorage(el){
-    console.log("SET STORAGE", el)
     localStorage.setItem("todos", JSON.stringify(el))
 }
   
@@ -12,7 +11,7 @@ export function getLocalStorage(){
 
 export function changeState(option, id, arr){
 return arr.map((el, index) => {
-        if(index == id){
+        if(el.id == id){
           return el = Object.assign(el, {[option]: !arr[index][option]})
         } else {
           return el
