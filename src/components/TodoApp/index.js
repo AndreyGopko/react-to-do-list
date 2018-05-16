@@ -43,7 +43,7 @@ class TodoApp extends React.Component {
 
     onEdit = (id, editedTitle) => {
         const todos = this.state.todos 
-        const item = this.getTodoById(id) 
+        const item = getTodoById(this.state.todos, id)
         const index = todos.indexOf(item) 
         item.taskTitle = editedTitle 
         const updatedTodos = todos.slice(0, index).concat(item, todos.slice(index + 1, todos.length)) 

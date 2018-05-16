@@ -15,20 +15,29 @@ class TodoList extends React.Component {
     onOpen = (e) => {
         e.preventDefault() 
         this.setState({isOpen: !this.state.isOpen}) 
-    } 
+    }
+
+    renderList(){
+        const {todos} = this.props
+        return (<ul className = 'todo-list'>
+            { todos.map((todo) => {
+                let {id, done, taskTitle} = todo
+                return <li key = {id}><Todo onEdit = {this.props.onEdit}
+                                            onDelete = {this.props.onDelete}
+                                            onCheck = {this.props.onCheck}
+                                            id = {id}
+                                            done = {done}
+                                            taskTitle = {taskTitle} />
+                </li>
+            })}
+        </ul>)
+    }
 
     render() {
-        const {todos} = this.props 
         return (
             <div className='app'>
                 <a onClick = {this.onOpen} href = '/' className = 'open-list dropdown-toggle'>list</a>
-
-                {this.state.isOpen && (<ul className = 'todo-list'>
-                    { todos.map((todo) => {
-                        let {id, done, taskTitle} = todo 
-                        return <li key = {id}><Todo onEdit = {this.props.onEdit} onDelete = {this.props.onDelete} onCheck = {this.props.onCheck} id = {id} done = {done} taskTitle = {taskTitle} /></li>
-                    })}
-                </ul>)}
+                {this.state.isOpen && this.renderList()}
                 </div>
         ) 
     } 
