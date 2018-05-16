@@ -32,7 +32,6 @@ class Todo extends React.Component {
 
     renderTodo() {
         const {id, done, taskTitle} = this.props
-        console.log(id, done, taskTitle);
         return (
             <div className = 'todo'>
                 <div className = 'todo-content'>

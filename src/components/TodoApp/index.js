@@ -52,7 +52,6 @@ class TodoApp extends React.Component {
 
 
     render() {
-        console.log(this.state.todos) 
         return (
             <div className = 'todo-app'>
                 <form  onSubmit = {this.onSubmit}>
