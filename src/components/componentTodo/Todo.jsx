@@ -35,7 +35,7 @@ class Todo extends Component {
     renderTodo = () => {
         return (
             <div className="todo-item">
-                 <input id="checkBox" type="checkbox" onChange={this.onChangeChk}/>
+                <input id="checkBox" type="checkbox" onChange={this.onChangeChk}/>
                 <p className="text-Todo">{this.props.item}</p>
                 <button className="btn-grey" onClick={this.onEdit}>Edit</button>
                 <button className="btn-red" onClick={this.onRemove}>Remove</button>
