@@ -1,14 +1,47 @@
-.header {
-    background: #eee;
-    padding: 20px;
-    box-shadow: 0 2px 8px 0px rgb(215, 215, 215);
-}
-
-.title {
-    margin: 0;
+.wrapper{
+    border: 1px solid gainsboro;
+    border-radius: 10px;
+    padding: 10px;
     text-align: center;
+  }
+  .btn{
+    border:1px solid gainsboro;
+    margin-right: 20px;
+  }
+  .span{
+    margin: 20px
+  }
+  .todoItem{
+    margin: 10px;
+  }
+  .inputLabel{
+      font-size: 24px;
+  }
+  .input{
+    border:1px solid gainsboro;
+    padding: 10px;
+    border-radius: 10px;
+  }
+  .todo{
+    display: inline-block;
+    border:1px solid gainsboro;
+    border-radius: 5px;
+    padding: 6px;
+    width: 300px;
+    border: 1px solid gainsboro;
+  }
+  .title{
+      text-align: center;
+      font-weight: bold;
+      font-size: 40px;
+      margin: 30px;
+  }
+  #output{
+      margin: 30px;
+  }
+  .done{
+    background-color: darkturquoise;
 }
-
-.container {
-    padding: 20px;
+.edition{
+    background-color: rgb(238, 238, 213)
 }
