@@ -1,25 +1,20 @@
 import React, { Component } from 'react';
 
 class Item extends Component {
-    constructor() {
-        super();
-
-    }
+    constructor(props) {
+        super(props);
+        this.state = {
+          inputValue: this.props.val
+        }
+      }
     
-    deleteItem(event) {
-        let itemRem = event.currentTarget.parentNode;
-        itemRem.remove();
-    }
-    switchCheck(event) {
-        let inp = event.currentTarget;
-    }
     render() {
         return (
-            <li className='list-item' >
-                <input type="checkbox" className='list-check' onClick={this.switchCheck.bind(this)} id="listCheck" checked={this.props.isCheck}/>
-                <input type="text" className='list-item-text' id="listText" value={this.props.val} disabled />
-                <button className='btn editElemList' id='editItem'>Edit</button>
-                <button className='btn deleteElemList' id='delItem' onClick={this.deleteItem.bind(this)} >Del</button>
+            <li className='list-item' data-id={this.props.id}>
+                <input type="checkbox" checked={this.props.check} className='list-check' id="listCheck" onClick={() => this.props.switchCheck(this.props.id, this.props.isCheck)} />
+                <input onChange = {this.onChangeInput} onBlur={() => this.props.editItem(this.state.inputValue)} type="text" className={this.props.check ? 'list-item-text done' : 'list-item-text'} id="listText" value={this.state.val} disabled />
+                <button className='btn editElemList' id='editItem' onClick={this.unblockArea.bind(this)} ref={(node) => this.button = node}>Edit</button>
+                <button className='btn deleteElemList' id='delItem' data-id={this.props.id} onClick={() => this.props.deleteItem(this.props.id)}>Del</button>
             </li>
         );
     }

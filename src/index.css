@@ -21,7 +21,8 @@ body * {
   text-align: center;
 }
 .list {
-  min-height: 300px;
+  height: 300px;
+  overflow-y: scroll;
 }
 .list-item {
   width: 100%;
@@ -46,6 +47,10 @@ body * {
   width: 65%;
   background-color: transparent;
   border: none;
+}
+.done {
+  color: red;
+  text-decoration: line-through;
 }
 .enterData {
   width: 100%;
