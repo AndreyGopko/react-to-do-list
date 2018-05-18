@@ -53,7 +53,7 @@ class AppLayout extends Component {
                          check={el.isCheck} 
                          id={el.id} 
                          deleteItem={this.deleteItem.bind(this)} 
-						 switchCheck={this.switchCheck.bind(this)} 
+						             switchCheck={this.switchCheck.bind(this)} 
                          />) }
         </ul>
         <div className='input-inner'>
