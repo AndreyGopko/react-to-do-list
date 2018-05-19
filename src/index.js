@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import ToDoCard from './components/app-layout';
+import './style.css';
+import ToDoCard from './components/to-do-card/index';
 
 ReactDOM.render(
     <ToDoCard />,
